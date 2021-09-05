@@ -1,13 +1,16 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.front')
 
-        <title>ソロキャンマップ</title>
-    </head>
-    <body>
-        <h1>ソロキャンマップ</h1>
-    </body>
-</html>
+
+{{-- admin.blade.phpの@yield('title')に'ニュースの新規作成'を埋め込む --}}
+@section('title', 'ソロキャンマップ')
+
+{{-- admin.blade.phpの@yield('content')に以下のタグを埋め込む --}}
+@section('content')
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                <h2>トップページ</h2>
+            </div>
+        </div>
+    </div>
+@endsection
