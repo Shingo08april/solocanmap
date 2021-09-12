@@ -20,3 +20,8 @@ Route::get('/show', 'GeneralController@show');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+Route::get('admin/campsite/create', 'Admin\CampsiteController@add');
+Route::post('admin/campsite/create', 'Admin\CampsiteController@create'); 
+
