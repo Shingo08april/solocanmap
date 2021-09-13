@@ -15,24 +15,32 @@
                             @endforeach
                         </ul>
                     @endif
-                     <div class="form-group row">
-                        <label class="col-md-2">画像</label>
-                        <div class="col-md-10">
-                            <input type="file" class="form-control-file" name="image">
-                        </div>
+                    <div class="form-group row">
+                      <label class="col-md-2">画像</label>
+                      <div class="col-md-10">
+                        <input type="file" class="form-control-file" name="image">
+                      </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-md-2">キャンプ場名</label>
-                        <div class="col-md-10">
-                            <input type="text" class="form-control" name="title" value="{{ old('title') }}">
-                        </div>
+                      <label class="col-md-2">キャンプ場名</label>
+                      <div class="col-md-10">
+                        <input type="text" class="form-control" name="campsite-name" value="{{ old('campsite-name') }}">
+                      </div>
+                    </div>
+                    <h2>キャンプ場情報</h2>
+                    <div class="form-group row">
+                      <label class="col-md-2">キャンプ場説明見出し</label>
+                      <div class="col-md-10">
+                        <input type="text" class="form-control" name="campsite-heading" value="{{ old('campsite-heading') }}">
+                      </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-md-2">本文</label>
-                        <div class="col-md-10">
-                            <textarea class="form-control" name="body" rows="20">{{ old('body') }}</textarea>
-                        </div>
+                      <label class="col-md-2">キャンプ場説明詳細</label>
+                      <div class="col-md-10">
+                        <textarea class="form-control" name="campsite-textarea" rows="20">{{ old('campsite-textarea') }}</textarea>
+                      </div>
                     </div>
+                    <h2>キャンプ場詳細</h2>
                     {{ csrf_field() }}
                     <input type="submit" class="btn btn-primary" value="更新">
                 </form>
