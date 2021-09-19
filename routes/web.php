@@ -21,7 +21,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-
-Route::get('admin/campsite/create', 'Admin\CampsiteController@add');
-Route::post('admin/campsite/create', 'Admin\CampsiteController@create'); 
-
+Route::group(['prefix' => 'admin'], function() {
+    Route::get('campsite/create', 'Admin\CampsiteController@add');
+    Route::post('campsite/create', 'Admin\CampsiteController@create');
+    Route::get('campsite', 'Admin\CampsiteController@index'); 
+});
