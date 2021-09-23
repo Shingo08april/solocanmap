@@ -42,6 +42,14 @@
                                     <th>{{ $campsite->id }}</th>
                                     <td>{{ \Str::limit($campsite->campsite_name, 100) }}</td>
                                     <td>{{ \Str::limit($campsite->area, 250) }}</td>
+                                    <td>
+                                        <div>
+                                            <a href="{{action('Admin\CampsiteController@edit', ['id' => $campsite->id]) }}">編集</a>
+                                        </div>
+                                        <div>
+                                            <a href="{{action('Admin\CampsiteController@delete', ['id' => $campsite->id]) }}">削除</a>
+                                        </div>
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>

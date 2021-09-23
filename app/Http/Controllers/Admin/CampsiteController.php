@@ -84,5 +84,15 @@ class CampsiteController extends Controller
       $campsite->fill($campsite_form)->save();
       return redirect('admin/campsite');
   }
+  
+  public function delete(Request $request)
+  {
+      
+      $campsite = Campsite::find($request->id);
+      // 削除する
+      $campsite->delete();
+      return redirect('admin/campsite/');
+  }  
+
 }
 

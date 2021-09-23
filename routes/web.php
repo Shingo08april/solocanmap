@@ -24,5 +24,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::group(['prefix' => 'admin'], function() {
     Route::get('campsite/create', 'Admin\CampsiteController@add');
     Route::post('campsite/create', 'Admin\CampsiteController@create');
-    Route::get('campsite', 'Admin\CampsiteController@index'); 
+    Route::get('campsite', 'Admin\CampsiteController@index');
+    Route::get('campsite/edit', 'Admin\CampsiteController@edit');
+    Route::post('campsite/edit', 'Admin\CampsiteController@update');
+    Route::get('campsite/delete', 'Admin\CampsiteController@delete'); 
 });
