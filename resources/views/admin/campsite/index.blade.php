@@ -32,16 +32,18 @@
                         <thead>
                             <tr>
                                 <th width="10%">ID</th>
-                                <th width="20%">キャンプ場名</th>
-                                <th width="50%">地域</th>
+                                <th width="20%"></th>
+                                <th width="30%">キャンプ場名</th>
+                                <th width="30%">地域</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach($posts as $campsite)
                                 <tr>
                                     <th>{{ $campsite->id }}</th>
-                                    <td>{{ \Str::limit($campsite->campsite_name, 100) }}</td>
-                                    <td>{{ \Str::limit($campsite->area, 250) }}</td>
+                                    <td><img src="{{ secure_asset("storage/image/" . $campsite->image_path) }}"></td>
+                                    <td>{{ \Str::limit($campsite->campsite_name, 50) }}</td>
+                                    <td>{{ $campsite->area }}</td>
                                     <td>
                                         <div>
                                             <a href="{{action('Admin\CampsiteController@edit', ['id' => $campsite->id]) }}">編集</a>
