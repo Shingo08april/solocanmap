@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Campsite;
 
 class GeneralController extends Controller
 {
@@ -14,7 +15,8 @@ class GeneralController extends Controller
     
     public function index()
     {
-        return view('toppage');
+        $posts = Campsite::all();
+        return view('toppage', ['posts' => $posts]);
     }
     
     public function list()
