@@ -2,118 +2,43 @@
 
 
 {{-- admin.blade.phpの@yield('title')に'ニュースの新規作成'を埋め込む --}}
-@section('title', 'ソロキャンパーのためのキャンプ場検索サイト｜ソロキャンマップ')
+@section('title', 'ソロキャンパーのためのキャンプ場検索サイト')
 
 {{-- admin.blade.phpの@yield('content')に以下のタグを埋め込む --}}
 @section('content')
     <div class="container">
-      <h2>全国のおすすめのキャンプ場</h2>
+      <h3>全国のおすすめのキャンプ場</h3>
       <div class="posts mx-auto mt-3">
         <ul class="camp_list row">
-         @foreach($posts as $campsite)
-          <li class="camp_list-single col-md-3">
+         @for($i = 0; $i < 4; $i++)
+         <li class="camp_list-single col-md-3">
             <div class="border rounded-lg overflow-hidden">
               <div class="camp-img">
-                <img src="{{ secure_asset("storage/image/" . $campsite->image_path) }}" class="img-thumbnail" >
+                <img src="{{ secure_asset("storage/image/" . $posts[$i]->image_path) }}" class="img-thumbnail" >
               </div>
               <div class="camp-text p-3">
-                <h3>{{ \Str::limit($campsite->campsite_name, 50) }}</h3>
-                <p>{{ $campsite->area }}</p>
+                <h3>{{ \Str::limit($posts[$i]->campsite_name, 50) }}</h3>
+                <p>{{ $posts[$i]->area }}</p>
               </div>
             </div>
           </li>
-          @endforeach 
+         @endfor
         <h2>「○○」周辺都道府県から探す</h2>
-        <ul class="camp_list row">
-          <li class="camp_list-single col-md-3">
+         <ul class="camp_list row">
+         @for($i = 0; $i < 8; $i++)
+         <li class="camp_list-single col-md-3">
             <div class="border rounded-lg overflow-hidden">
               <div class="camp-img">
-                <img src="images/picture.png" alt="キャンプ場">
+                <img src="{{ secure_asset("storage/image/" . $posts[$i]->image_path) }}" class="img-thumbnail" >
               </div>
               <div class="camp-text p-3">
-                <h3>キャンプ場1</h3>
-                <p>場所：兵庫県姫路市</p>
+                <h3>{{ \Str::limit($posts[$i]->campsite_name, 50) }}</h3>
+                <p>{{ $posts[$i]->area }}</p>
               </div>
             </div>
           </li>
-          <li class="camp_list-single col-md-3">
-            <div class="border rounded-lg overflow-hidden">
-              <div class="camp-img">
-                <img src="images/picture.png" alt="キャンプ場">
-              </div>
-              <div class="camp-text p-3">
-                <h3>キャンプ場1</h3>
-                <p>場所：兵庫県姫路市</p>
-              </div>
-            </div>
-          </li>
-          <li class="camp_list-single col-md-3">
-            <div class="border rounded-lg overflow-hidden">
-              <div class="camp-img">
-                <img src="images/picture.png" alt="キャンプ場">
-              </div>
-              <div class="camp-text p-3">
-                <h3>キャンプ場1</h3>
-                <p>場所：兵庫県姫路市</p>
-              </div>
-            </div>
-          </li>
-          <li class="camp_list-single col-md-3">
-            <div class="border rounded-lg overflow-hidden">
-              <div class="camp-img">
-                <img src="images/picture.png" alt="キャンプ場">
-              </div>
-              <div class="camp-text p-3">
-                <h3>キャンプ場1</h3>
-                <p>場所：兵庫県姫路市</p>
-              </div>
-            </div>
-          </li>
-          <li class="camp_list-single col-md-3">
-            <div class="border rounded-lg overflow-hidden">
-              <div class="camp-img">
-                <img src="images/picture.png" alt="キャンプ場">
-              </div>
-              <div class="camp-text p-3">
-                <h3>キャンプ場1</h3>
-                <p>場所：兵庫県姫路市</p>
-              </div>
-            </div>
-          </li>
-          <li class="camp_list-single col-md-3">
-            <div class="border rounded-lg overflow-hidden">
-              <div class="camp-img">
-                <img src="images/picture.png" alt="キャンプ場">
-              </div>
-              <div class="camp-text p-3">
-                <h3>キャンプ場1</h3>
-                <p>場所：兵庫県姫路市</p>
-              </div>
-            </div>
-          </li>
-          <li class="camp_list-single col-md-3">
-            <div class="border rounded-lg overflow-hidden">
-              <div class="camp-img">
-                <img src="images/picture.png" alt="キャンプ場">
-              </div>
-              <div class="camp-text p-3">
-                <h3>キャンプ場1</h3>
-                <p>場所：兵庫県姫路市</p>
-              </div>
-            </div>
-          </li>
-          <li class="camp_list-single col-md-3">
-            <div class="border rounded-lg overflow-hidden">
-              <div class="camp-img">
-                <img src="images/picture.png" alt="キャンプ場">
-              </div>
-              <div class="camp-text p-3">
-                <h3>キャンプ場1</h3>
-                <p>場所：兵庫県姫路市</p>
-              </div>
-            </div>
-          </li>
-         </ul>
+         @endfor
+        </ul>
       </div>
     </div>
 @endsection

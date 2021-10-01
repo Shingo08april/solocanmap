@@ -74,7 +74,7 @@ class CampsiteController extends Controller
           $path = $request->file('image')->store('public/image');
           $campsite_form['image_path'] = basename($path);
       } else {
-          $campsite_forms_form['image_path'] = $news->image_path;
+          $campsite_forms_form['image_path'] = $campsite->image_path;
       }
       
       unset($campsite_form['image']);

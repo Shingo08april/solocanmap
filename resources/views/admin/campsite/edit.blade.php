@@ -23,7 +23,7 @@
                     <div class="form-group row">
                         <label class="col-md-2" for="body">地域</label>
                         <div class="col-md-10">
-                            <textarea class="form-control" name="area" rows="20">{{ $campsite_form->body }}</textarea>
+                            <input type="text" class="form-control" name="area" value="{{ old('area') }}">
                         </div>
                     </div>
                     <div class="form-group row">
@@ -39,6 +39,62 @@
                                 </label>
                             </div>
                         </div>
+                    </div>
+                     <h2>キャンプ場情報</h2>
+                    <div class="form-group row">
+                      <label class="col-md-2">キャンプ場説明見出し</label>
+                      <div class="col-md-10">
+                        <input type="text" class="form-control" name="campsite_heading" value="{{ old('campsite_heading') }}">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label class="col-md-2">キャンプ場説明詳細</label>
+                      <div class="col-md-10">
+                        <textarea class="form-control" name="campsite_textarea" rows="20">{{ old('campsite_textarea') }}</textarea>
+                      </div>
+                    </div>
+                    <h2>キャンプ場詳細</h2>
+                    <div class="form-group row">
+                      <label class="col-md-2">住所</label>
+                      <div class="col-md-10">
+                        <input type="text" class="form-control" name="address" value="{{ old('address') }}">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label class="col-md-2">アクセス</label>
+                      <div class="col-md-10">
+                        <textarea class="form-control" name="access_textarea" rows="20">{{ old('access_textarea') }}</textarea>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label class="col-md-2">駐車場</label>
+                      <div class="col-md-10">
+                        <input type="text" class="form-control" name="parking" value="{{ old('parking') }}">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label class="col-md-2">電話番号</label>
+                      <div class="col-md-10">
+                        <input type="text" class="form-control" name="tel" value="{{ old('tel') }}">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label class="col-md-2">料金</label>
+                      <div class="col-md-10">
+                        <input type="text" class="form-control" name="price" value="{{ old('price') }}">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label class="col-md-2">営業時間</label>
+                      <div class="col-md-10">
+                        <input type="text" class="form-control" name="businesshours" value="{{ old('businesshours') }}">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label class="col-md-2">定休日</label>
+                      <div class="col-md-10">
+                        <input type="text" class="form-control" name="holiday" value="{{ old('holiday') }}">
+                      </div>
                     </div>
                     <div class="form-group row">
                         <div class="col-md-10">
