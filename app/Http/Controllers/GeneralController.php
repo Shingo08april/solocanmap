@@ -24,8 +24,22 @@ class GeneralController extends Controller
         return view('general-user.campsite.list');
     }
     
-    public function show()
+    public function show(Request $request)
     {
-        return view('general-user.campsite.show');
+         $campsite = Campsite::find($request->id);
+      if (empty($campsite)) {
+        abort(404);    
+      }
+        return view('general-user.campsite.show', ['campsite'=>$campsite]);
     }
+    
+    /*public function edit(Request $request)
+  {
+      // News Modelからデータを取得する
+      $news = News::find($request->id);
+      if (empty($news)) {
+        abort(404);    
+      }
+      return view('admin.news.edit', ['news_form' => $news]);
+  }*/
 }

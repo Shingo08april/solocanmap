@@ -9,9 +9,10 @@
     <div class="container">
       <h3>全国のおすすめのキャンプ場</h3>
       <div class="posts mx-auto mt-3">
-        <ul class="camp_list row">
+        <ul class="camp_list row list-unstyled mb-5">
          @for($i = 0; $i < 4; $i++)
          <li class="camp_list-single col-md-3">
+            <a href="{{route('show', ['id' => $posts[$i]->id] )}}">
             <div class="border rounded-lg overflow-hidden">
               <div class="camp-img">
                 <img src="{{ secure_asset("storage/image/" . $posts[$i]->image_path) }}" class="img-thumbnail" >
@@ -21,12 +22,15 @@
                 <p>{{ $posts[$i]->area }}</p>
               </div>
             </div>
+            </a>
           </li>
          @endfor
-        <h2>「○○」周辺都道府県から探す</h2>
-         <ul class="camp_list row">
+         </ul>
+        <h2>「近畿」周辺都道府県から探す</h2>
+         <ul class="camp_list row list-unstyled">
          @for($i = 0; $i < 8; $i++)
-         <li class="camp_list-single col-md-3">
+         <li class="camp_list-single col-md-3 mb-4">
+            <a href="{{route('show', ['id' => $posts[$i]->id] )}}">
             <div class="border rounded-lg overflow-hidden">
               <div class="camp-img">
                 <img src="{{ secure_asset("storage/image/" . $posts[$i]->image_path) }}" class="img-thumbnail" >

@@ -1,3 +1,5 @@
+@extends('layouts.show')
+@section('title', '関西のキャンプ場|ソロキャンマップ'))
 <!DOCTYPE html>
 <html>
     <head>
@@ -5,9 +7,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>関西のキャンプ場｜ソロキャンマップ</title>
-    </head>
+       
     <body>
-        <h1>関西のキャンプ場</h1>
+        <h1>{{$campsite->campsite_name}}</h1>
     </body>
 </html>

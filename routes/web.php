@@ -15,7 +15,7 @@ Route::get('/', 'GeneralController@index');
 Route::get('/about', 'GeneralController@about');
 Route::get('/list', 'GeneralController@list');
 Route::get('/show', 'GeneralController@show');
-
+Route::get('show/{id}', 'GeneralController@show')->name("show");
 
 Auth::routes();
 
