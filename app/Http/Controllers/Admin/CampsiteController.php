@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Campsite;
+use App\Image;
 
 class CampsiteController extends Controller
 {
@@ -20,13 +21,12 @@ class CampsiteController extends Controller
         $this->validate($request, Campsite::$rules);
         $camp = new Campsite;
         $form = $request->all();
-        
+        $image_path = null;
         // formに画像があれば、保存する
         if (isset($form['image'])) {
             $path = $request->file('image')->store('public/image');
-            $camp->image_path = basename($path);
-        } else {
-            $camp->image_path = null;
+            $image_path = basename($path);
+        
         }
         
         unset($form['_token']);
@@ -34,6 +34,13 @@ class CampsiteController extends Controller
         // データベースに保存する
         $camp->fill($form);
         $camp->save();
+        if ($image_path != null){
+            $image = new Image;
+            $image->image_path = $image_path;
+            $image->campsite_id = $camp->id;
+            $image->save();
+        }
+        
         
         return redirect('admin/campsite/create');
     }

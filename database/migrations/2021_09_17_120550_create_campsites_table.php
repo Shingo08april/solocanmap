@@ -18,8 +18,7 @@ class CreateCampsitesTable extends Migration
             $table->string('campsite_name'); // ニュースのタイトルを保存するカラム
             $table->string('area');
             $table->string('campsite_heading')->nullable();  // ニュースの本文を保存するカラム
-            $table->string('campsite_textarea')->nullable(); // ニュースの本文を保存するカラム
-            $table->string('image_path')->nullable();  // 画像のパスを保存するカラム
+            $table->string('campsite_textarea')->nullable(); // ニュースの本文を保存するカラム// 画像のパスを保存するカラム
             $table->string('address')->nullable();
             $table->string('access_textarea')->nullable();
             $table->string('parking')->nullable();

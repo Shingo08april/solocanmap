@@ -22,30 +22,6 @@
                       </div>
                     </div>
                     <div class="form-group row">
-                      <label class="col-md-2">画像2</label>
-                      <div class="col-md-10">
-                        <input type="file" class="form-control-file" name="image">
-                      </div>
-                    </div>
-                    <div class="form-group row">
-                      <label class="col-md-2">画像3</label>
-                      <div class="col-md-10">
-                        <input type="file" class="form-control-file" name="image">
-                      </div>
-                    </div>
-                    <div class="form-group row">
-                      <label class="col-md-2">画像4</label>
-                      <div class="col-md-10">
-                        <input type="file" class="form-control-file" name="image">
-                      </div>
-                    </div>
-                    <div class="form-group row">
-                      <label class="col-md-2">画像5</label>
-                      <div class="col-md-10">
-                        <input type="file" class="form-control-file" name="image">
-                      </div>
-                    </div>
-                    <div class="form-group row">
                       <label class="col-md-2">キャンプ場名</label>
                       <div class="col-md-10">
                         <input type="text" class="form-control" name="campsite_name" value="{{ old('campsite_name') }}">
