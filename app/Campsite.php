@@ -14,4 +14,8 @@ class Campsite extends Model
         'campsite_name' => 'required',
         'area' => 'required',
     );
+    
+    public function image() {
+        return $this->hasOne('App\Image');
+    }
 }
