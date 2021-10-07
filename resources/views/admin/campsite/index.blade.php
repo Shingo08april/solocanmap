@@ -32,7 +32,7 @@
                         <thead>
                             <tr>
                                 <th width="10%">ID</th>
-                                <th width="30%"></th>
+                                <th></th>
                                 <th width="20%">キャンプ場名</th>
                                 <th width="20%">地域</th>
                             </tr>
@@ -41,7 +41,7 @@
                             @foreach($posts as $campsite)
                                 <tr>
                                     <th>{{ $campsite->id }}</th>
-                                    <td><img src="{{ secure_asset("storage/image/" . $campsite->image_path) }}" class="img-thumbnail" ></td>
+                                    <td><img src="{{ secure_asset("storage/image/" . $campsite->image->image_path) }}" class="img-thumbnail" ></td>
                                     <td>{{ \Str::limit($campsite->campsite_name, 50) }}</td>
                                     <td>{{ $campsite->area }}</td>
                                     <td>

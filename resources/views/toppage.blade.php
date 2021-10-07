@@ -37,17 +37,20 @@
          @if($i > count($posts)-1)
          @break
          @endif
-         <li class="camp_list-single col-md-3 mb-4">
+         <li class="camp_list-single col-md-3">
             <a href="{{route('show', ['id' => $posts[$i]->id] )}}">
             <div class="border rounded-lg overflow-hidden">
+              @if(null != $posts[$i]->image)
               <div class="camp-img">
-                <img src="{{ secure_asset("storage/image/" . $posts[$i]->image_path) }}" class="img-thumbnail" >
+                <img src="{{ secure_asset("storage/image/" . $posts[$i]->image->image_path) }}" class="img-thumbnail" >
               </div>
+              @endif
               <div class="camp-text p-3">
                 <h3>{{ \Str::limit($posts[$i]->campsite_name, 50) }}</h3>
                 <p>{{ $posts[$i]->area }}</p>
               </div>
             </div>
+            </a>
           </li>
          @endfor
         </ul>

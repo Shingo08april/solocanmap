@@ -18,27 +18,21 @@ class CampsiteController extends Controller
     public function create(Request $request)
     {
         // Validationを行う
+        
         $this->validate($request, Campsite::$rules);
         $camp = new Campsite;
-        $form = $request->all();
-        $image_path = null;
-        // formに画像があれば、保存する
-        if (isset($form['image'])) {
-            $path = $request->file('image')->store('public/image');
-            $image_path = basename($path);
-        
-        }
-        
-        unset($form['_token']);
-        unset($form['image']);
-        // データベースに保存する
-        $camp->fill($form);
+        $camp->fill($request->except(["_token", "images"]));
         $camp->save();
-        if ($image_path != null){
-            $image = new Image;
-            $image->image_path = $image_path;
-            $image->campsite_id = $camp->id;
-            $image->save();
+
+        if (isset($request->images)) {
+          foreach( $request->file("images") as $image){
+             $path = $image->store('public/image');
+             $image_path = basename($path);
+             $image = new Image;
+             $image->image_path = $image_path;
+             $image->campsite_id = $camp->id;
+             $image->save();
+          }
         }
         
         
@@ -58,7 +52,7 @@ class CampsiteController extends Controller
         return view('admin.campsite.index', ['posts' => $posts, 'cond_title' => $cond_title]);
     }
     
-    public function edit(Request $request)
+  public function edit(Request $request)
   {
       $campsite = Campsite::find($request->id);
       if (empty($campsite)) {
