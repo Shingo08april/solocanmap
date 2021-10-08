@@ -81,6 +81,9 @@
                 {{-- コンテンツをここに入れるため、@yieldで空けておきます。 --}}
                 @yield('content')
             </main>
+            <footer>
+            
+            </footer>
         </div>
     </body>
 </html>

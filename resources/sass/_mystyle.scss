@@ -1,3 +1,7 @@
+img{
+    width:100%;
+}
+
 .camp-img{
     position:relative;
     overflow:hidden;
@@ -10,3 +14,20 @@
     }
 }
 
+//show.bladeのlayout
+
+.images-container{
+    display:flex;
+    .left-cont{
+        width:50%;
+    }
+    .right-cont{
+        width:50%;
+        display:flex;
+        flex-wrap:wrap;
+        .single-img{
+            width:50%;
+            overflow:hidden;
+        }
+    }
+}

@@ -11004,6 +11004,10 @@ a.text-dark:focus {
   }
 }
 
+img {
+  width: 100%;
+}
+
 .camp-img {
   position: relative;
   overflow: hidden;
@@ -11015,5 +11019,24 @@ a.text-dark:focus {
   top: 0;
   left: 0;
   width: 100%;
+}
+
+.images-container {
+  display: flex;
+}
+
+.images-container .left-cont {
+  width: 50%;
+}
+
+.images-container .right-cont {
+  width: 50%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.images-container .right-cont .single-img {
+  width: 50%;
+  overflow: hidden;
 }
 
