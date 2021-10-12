@@ -1,4 +1,4 @@
-@extends('layouts.common')
+@extends('layouts.app')
 
 
 {{-- admin.blade.phpの@yield('title')に'ニュースの新規作成'を埋め込む --}}
@@ -7,6 +7,7 @@
 {{-- admin.blade.phpの@yield('content')に以下のタグを埋め込む --}}
 @section('content')
     <div class="container">
+        <li><a href="https://1a6b97bf05f84026aed26cd79bfe566d.vfs.cloud9.ap-northeast-1.amazonaws.com/">トップページ</a></li>
       <h3>全国のおすすめのキャンプ場</h3>
       <div class="posts mx-auto mt-3">
         <ul class="camp_list row list-unstyled mb-5">

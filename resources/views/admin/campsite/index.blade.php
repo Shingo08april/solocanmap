@@ -3,6 +3,7 @@
 
 @section('content')
     <div class="container">
+        <li><a href="https://1a6b97bf05f84026aed26cd79bfe566d.vfs.cloud9.ap-northeast-1.amazonaws.com/">トップページ</a></li>
         <div class="row">
             <h2>キャンプ場一覧</h2>
         </div>
