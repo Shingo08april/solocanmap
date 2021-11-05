@@ -14,4 +14,13 @@
     </div>
   </div>
 </div>
+<h1 class="container">キャンプ場１</h1>
+<div class="container">キャンプ場住所</div>
+<h2 class="container">キャンプ場見出し</h2>
+<div class="container">
+  <p>キャンプ場詳細</p>
+</div>
+<div class="container">
+  <h3 class="container-title">施設情報</h3>
+</div>
 @endsection

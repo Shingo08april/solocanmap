@@ -71,7 +71,7 @@
                         <textarea class="form-control" name="campsite_textarea" rows="20">{{ old('campsite_textarea') }}</textarea>
                       </div>
                     </div>
-                    <h2>キャンプ場詳細</h2>
+                    <h2>施設情報</h2>
                     <div class="form-group row">
                       <label class="col-md-2">住所</label>
                       <div class="col-md-10">
