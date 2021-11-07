@@ -114,43 +114,43 @@
                     <div class="form-group row">
                       <label class="col-md-2">住所</label>
                       <div class="col-md-10">
-                        <input type="text" class="form-control" name="address" value="{{ $campsite_form->campsite_address }}">
+                        <input type="text" class="form-control" name="address" value="{{ $campsite_form->address }}">
                       </div>
                     </div>
                     <div class="form-group row">
                       <label class="col-md-2">アクセス</label>
                       <div class="col-md-10">
-                        <textarea class="form-control" name="access_textarea" rows="20">{{ $campsite_form->campsite_access_textarea }}</textarea>
+                        <textarea class="form-control" name="access_textarea" rows="20">{{ $campsite_form->access_textarea }}</textarea>
                       </div>
                     </div>
                     <div class="form-group row">
                       <label class="col-md-2">駐車場</label>
                       <div class="col-md-10">
-                        <input type="text" class="form-control" name="parking" value="{{$campsite_form->campsite_parking }}">
+                        <input type="text" class="form-control" name="parking" value="{{$campsite_form->parking }}">
                       </div>
                     </div>
                     <div class="form-group row">
                       <label class="col-md-2">電話番号</label>
                       <div class="col-md-10">
-                        <input type="text" class="form-control" name="tel" value="{{ $campsite_form->campsite_tel }}">
+                        <input type="text" class="form-control" name="tel" value="{{ $campsite_form->tel }}">
                       </div>
                     </div>
                     <div class="form-group row">
                       <label class="col-md-2">料金</label>
                       <div class="col-md-10">
-                        <input type="text" class="form-control" name="price" value="{{ $campsite_form->campsite_price }}">
+                        <input type="text" class="form-control" name="price" value="{{ $campsite_form->price }}">
                       </div>
                     </div>
                     <div class="form-group row">
                       <label class="col-md-2">営業時間</label>
                       <div class="col-md-10">
-                        <input type="text" class="form-control" name="businesshours" value="{{ $campsite_form->campsite_businesshours }}">
+                        <input type="text" class="form-control" name="businesshours" value="{{ $campsite_form->businesshours }}">
                       </div>
                     </div>
                     <div class="form-group row">
                       <label class="col-md-2">定休日</label>
                       <div class="col-md-10">
-                        <input type="text" class="form-control" name="holiday" value="{{ $campsite_form->campsite_holiday }}">
+                        <input type="text" class="form-control" name="holiday" value="{{ $campsite_form->holiday }}">
                       </div>
                     </div>
                     <div class="form-group row">

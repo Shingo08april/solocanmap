@@ -18,11 +18,9 @@
          <li class="camp_list-single col-md-3">
             <a href="{{route('show', ['id' => $posts[$i]->id] )}}">
             <div class="border rounded-lg overflow-hidden">
-              
               <div class="camp-img">
-                <img src="{{ secure_asset("storage/image/" . $posts[$i]->image[0]->image_path) }}" class="img-thumbnail" >
+                <img src="{{ secure_asset("storage/image/" . $posts[$i]->images[0]->image_path) }}" class="img-thumbnail" >
               </div>
-            
               <div class="camp-text p-3">
                 <h3>{{ \Str::limit($posts[$i]->campsite_name, 50) }}</h3>
                 <p>{{ $posts[$i]->area }}</p>
@@ -41,12 +39,10 @@
          <li class="camp_list-single col-md-3">
             <a href="{{route('show', ['id' => $posts[$i]->id] )}}">
             <div class="border rounded-lg overflow-hidden">
-              @if(null != $posts[$i]->image)
               <div class="camp-img">
-                <img src="{{ secure_asset("storage/image/" . $posts[$i]->image->image_path) }}" class="img-thumbnail" >
+                <img src="{{ secure_asset("storage/image/" . $posts[$i]->images[0]->image_path) }}" class="img-thumbnail" >
               </div>
-              @endif
-              <div class="camp-text p-3">
+            <div class="camp-text p-3">
                 <h3>{{ \Str::limit($posts[$i]->campsite_name, 50) }}</h3>
                 <p>{{ $posts[$i]->area }}</p>
               </div>
