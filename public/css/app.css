@@ -11033,3 +11033,7 @@ img {
   height: 100%;
 }
 
+.text-prewrap {
+  white-space: pre-wrap;
+}
+

@@ -32,7 +32,7 @@
                         <div class="col-md-10">
                             <input type="file" class="form-control-file" name="image">
                             <div class="form-text text-info">
-                                設定中: {{ $campsite_form->image_path }}
+                                設定中: {{ $campsite_form->images[0]->image_path }}
                             </div>
                             <div class="form-check">
                                 <label class="form-check-label">
@@ -46,7 +46,7 @@
                         <div class="col-md-10">
                             <input type="file" class="form-control-file" name="image">
                             <div class="form-text text-info">
-                                設定中: {{ $campsite_form->image_path }}
+                                設定中: {{ $campsite_form->images[1]->image_path}}
                             </div>
                             <div class="form-check">
                                 <label class="form-check-label">
@@ -60,7 +60,7 @@
                         <div class="col-md-10">
                             <input type="file" class="form-control-file" name="image">
                             <div class="form-text text-info">
-                                設定中: {{ $campsite_form->image_path }}
+                                設定中: {{ $campsite_form->images[2]->image_path }}
                             </div>
                             <div class="form-check">
                                 <label class="form-check-label">
@@ -74,7 +74,7 @@
                         <div class="col-md-10">
                             <input type="file" class="form-control-file" name="image">
                             <div class="form-text text-info">
-                                設定中: {{ $campsite_form->image_path }}
+                                設定中: {{ $campsite_form->images[3]->image_path }}
                             </div>
                             <div class="form-check">
                                 <label class="form-check-label">
@@ -88,7 +88,7 @@
                         <div class="col-md-10">
                             <input type="file" class="form-control-file" name="image">
                             <div class="form-text text-info">
-                                設定中: {{ $campsite_form->image_path }}
+                                設定中: {{ $campsite_form->images[4]->image_path}}
                             </div>
                             <div class="form-check">
                                 <label class="form-check-label">
