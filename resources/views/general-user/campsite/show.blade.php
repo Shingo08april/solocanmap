@@ -25,7 +25,14 @@
     <dl class="d-flex">
       <dt class="w-25">住所</dt>
       <dd class="w-75">{{ $campsite->address }}</dd>
-      
+    </dl>
+    <dl class="d-flex">
+      <dt class="w-25">アクセス</dt>
+      <dd class="w-75 text-prewrap">{{ $campsite->access_textarea }}</dd>
+    </dl>
+    <dl class="d-flex">
+      <dt class="w-25">駐車場</dt>
+      <dd class="w-75 text-prewrap">{{ $campsite->parking }}</dd>
     </dl>
 </div>
 @endsection
