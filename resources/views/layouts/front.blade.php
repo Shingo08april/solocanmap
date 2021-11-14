@@ -81,6 +81,7 @@
                 {{-- コンテンツをここに入れるため、@yieldで空けておきます。 --}}
                 @yield('content')
             </main>
+            @include('layouts.footer')
         </div>
     </body>
 </html>

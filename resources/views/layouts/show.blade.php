@@ -28,7 +28,7 @@
     </head>
     <body>
         <div id="app">
-            {{-- 画面上部に表示するナビゲーションバーです。 --}}
+            
             <nav class="navbar navbar-expand-md navbar-dark navbar-laravel">
                 <div class="container">
                     <a class="navbar-brand" href="{{ url('/') }}">
@@ -81,9 +81,7 @@
                 {{-- コンテンツをここに入れるため、@yieldで空けておきます。 --}}
                 @yield('content')
             </main>
-            <footer>
-            
-            </footer>
+            @include('layouts.footer')
         </div>
     </body>
 </html>

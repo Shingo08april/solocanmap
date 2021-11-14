@@ -5,9 +5,21 @@
 @section('content')
   <div class="container">
     <div class="d-flex show_images-cont mb-4">
-      <div class="w-50 overflow-hidden"><img src="{{ secure_asset("storage/image/" . $campsite->images[0]->image_path) }}"  ></div>
+      <div class="w-50 overflow-hidden">
+        @if($campsite->images[0]->image_path != null)
+         <img src="{{ secure_asset("storage/image/" . $campsite->images[0]->image_path) }}" >
+        @else
+         <img src="{{ secure_asset("image/noimage.png") }}">
+        @endif
+      </div>
       <div class="w-50 d-flex flex-wrap">
-        <div class="w-50 h-50 overflow-hidden"><img src="{{ secure_asset("storage/image/" . $campsite->images[1]->image_path) }}"  ></div>
+        <div class="w-50 h-50 overflow-hidden">
+          @if($campsite->images[1]->image_path != null)
+           <img src="{{ secure_asset("storage/image/" . $campsite->images[1]->image_path) }}" >
+          @else
+           <img src="{{ secure_asset("image/noimage.png") }}">
+          @endif
+        </div>
         <div class="w-50 h-50 overflow-hidden"><img src="{{ secure_asset("storage/image/" . $campsite->images[2]->image_path) }}"  ></div>
         <div class="w-50 h-50 overflow-hidden"><img src="{{ secure_asset("storage/image/" . $campsite->images[3]->image_path) }}"  ></div>
         <div class="w-50 h-50 overflow-hidden"><img src="{{ secure_asset("storage/image/" . $campsite->images[4]->image_path) }}"  ></div>
