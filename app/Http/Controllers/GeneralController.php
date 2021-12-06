@@ -16,12 +16,14 @@ class GeneralController extends Controller
     public function index()
     {
         $posts = Campsite::all();
+        //dd($posts);
         return view('toppage', ['posts' => $posts]);
     }
     
     public function list()
     {
-        return view('general-user.campsite.list');
+        $posts = Campsite::all();
+        return view('general-user.campsite.list', ['posts' => $posts]);
     }
     
     public function show(Request $request)

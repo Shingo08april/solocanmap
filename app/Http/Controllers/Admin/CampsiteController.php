@@ -44,7 +44,7 @@ class CampsiteController extends Controller
         $cond_title = $request->cond_title;
         if ($cond_title != '') {
             // 検索されたら検索結果を取得する
-            $posts = Campsite::where('title', $cond_title)->get();
+            $posts = Campsite::where('campsite_name', $cond_title)->get();
         } else {
             // それ以外はすべてのニュースを取得する
             $posts = Campsite::all();
@@ -69,18 +69,31 @@ class CampsiteController extends Controller
       $campsite = Campsite::find($request->id);
       
       $campsite_form = $request->all();
-      if ($request->remove == 'true') {
-          $campsite_form['image_path'] = null;
-      } elseif ($request->file('image')) {
-          $path = $request->file('image')->store('public/image');
-          $campsite_form['image_path'] = basename($path);
-      } else {
-          $campsite_forms_form['image_path'] = $campsite->image_path;
-      }
+      //dd($campsite_form);
+    
       
-      unset($campsite_form['image']);
+      $image = Image::find('campsite_id'. $campsite->id);
+      if (isset($request->images)) {
+          foreach( $request->file("images") as $image){
+            if ($request->remove == 'true') {
+                $campsites_form['image_path'] = null;
+            } elseif ($request->file('image')) {
+          if ($image) {
+                $path = $image->store('public/image');
+                $image_path = basename($path);
+                $image = new Image;
+                $image->image_path = $image_path;
+                $image->campsite_id = $campite->id;
+                $image->save();
+            } else {
+                $campsite_forms_form['image_path'] = $campsite->image_path;
+            }
+          }
+      }
+ 
       unset($campsite_form['remove']);
       unset($campsite_form['_token']);
+      unset($campsite_form['images']);
 
       $campsite->fill($campsite_form)->save();
       return redirect('admin/campsite');

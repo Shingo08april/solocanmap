@@ -42,7 +42,11 @@
                                 <tr>
                                     <th>{{ $campsite->id }}</th>
                                     <td>
+                                        @if(isset($campsite->images[0]))
                                         <img src="{{ secure_asset("storage/image/" . $campsite->images[0]->image_path) }}" class="img-thumbnail" >
+                                        @else
+                                        <img src="{{ secure_asset("image/noimage.png") }}">
+                                        @endif
                                     </td>
                                     <td>{{ \Str::limit($campsite->campsite_name, 50) }}</td>
                                     <td>{{ $campsite->area }}</td>
