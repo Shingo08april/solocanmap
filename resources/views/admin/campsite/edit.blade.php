@@ -40,7 +40,7 @@
                             @if(isset($campsite_form->images[0]))
                             <div class="form-check">
                                 <label class="form-check-label">
-                                    <input type="checkbox" class="form-check-input" name="removes[]" value="true">画像を削除
+                                    <input type="checkbox" class="form-check-input" name="removes[0]" value="true">画像を削除
                                 </label>
                             </div>
                             @endif
@@ -60,7 +60,7 @@
                              @if(isset($campsite_form->images[1]))
                             <div class="form-check">
                                 <label class="form-check-label">
-                                    <input type="checkbox" class="form-check-input" name="removes[]" value="true">画像を削除
+                                    <input type="checkbox" class="form-check-input" name="removes[1]" value="true">画像を削除
                                 </label>
                             </div>
                             @endif
@@ -80,7 +80,7 @@
                              @if(isset($campsite_form->images[2]))
                             <div class="form-check">
                                 <label class="form-check-label">
-                                    <input type="checkbox" class="form-check-input" name="removes[]" value="true">画像を削除
+                                    <input type="checkbox" class="form-check-input" name="removes[2]" value="true">画像を削除
                                 </label>
                             </div>
                             @endif
@@ -100,7 +100,7 @@
                              @if(isset($campsite_form->images[3]))
                             <div class="form-check">
                                 <label class="form-check-label">
-                                    <input type="checkbox" class="form-check-input" name="removes[]" value="true">画像を削除
+                                    <input type="checkbox" class="form-check-input" name="removes[3]" value="true">画像を削除
                                 </label>
                             </div>
                             @endif
@@ -120,7 +120,7 @@
                              @if(isset($campsite_form->images[4]))
                             <div class="form-check">
                                 <label class="form-check-label">
-                                    <input type="checkbox" class="form-check-input" name="removes[]" value="true">画像を削除
+                                    <input type="checkbox" class="form-check-input" name="removes[4]" value="true">画像を削除
                                 </label>
                             </div>
                             @endif

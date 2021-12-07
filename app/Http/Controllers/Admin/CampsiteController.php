@@ -69,15 +69,15 @@ class CampsiteController extends Controller
       $campsite = Campsite::find($request->id);
       
       $campsite_form = $request->all();
-      //dd($campsite_form);
+      dd($campsite_form);
     
       
       $image = Image::find('campsite_id'. $campsite->id);
       if (isset($request->images)) {
           foreach( $request->file("images") as $image){
-            if ($request->remove == 'true') {
-                $campsites_form['image_path'] = null;
-            } elseif ($request->file('image')) {
+            // if ($request->remove == 'true') {
+            //     $campsite_form['image_path'] = null;
+            // } elseif ($request->file('image')) {
           if ($image) {
                 $path = $image->store('public/image');
                 $image_path = basename($path);
