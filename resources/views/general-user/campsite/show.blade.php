@@ -64,5 +64,43 @@
       <dt class="w-25">駐車場</dt>
       <dd class="w-75 text-prewrap">{{ $campsite->parking }}</dd>
     </dl>
+    /*<dl class="d-flex">
+      <dt class="w-25">乗り入れ可能車両</dt>
+      <dd class="w-75 text-prewrap">{{ $campsite->vehicle }}</dd>
+    </dl>
+    <dl class="d-flex">
+      <dt class="w-25">立地環境</dt>
+      <dd class="w-75 text-prewrap">{{ $campsite->habitat }}</dd>
+    </dl>
+    <dl class="d-flex">
+      <dt class="w-25">施設タイプ</dt>
+      <dd class="w-75 text-prewrap">{{ $campsite->campsite_type }}</dd>
+    </dl>
+    <dl class="d-flex">
+      <dt class="w-25">レンタル可能用品</dt>
+      <dd class="w-75 text-prewrap">{{ $campsite->rental_item }}</dd>
+    </dl>
+    <h3 class="container-title">営業情報</h3>
+    <dl class="d-flex">
+      <dt class="w-25">営業期間</dt>
+      <dd class="w-75 text-prewrap">{{ $campsite->habitat }}</dd>
+    </dl>
+    <dl class="d-flex">
+      <dt class="w-25">定休日</dt>
+      <dd class="w-75 text-prewrap">{{ $campsite->habitat }}</dd>
+    </dl>
+    <dl class="d-flex">
+      <dt class="w-25">チェックイン</dt>
+      <dd class="w-75 text-prewrap">{{ $campsite->habitat }}</dd>
+    </dl>
+    <dl class="d-flex">
+      <dt class="w-25">チェックアウト</dt>
+      <dd class="w-75 text-prewrap">{{ $campsite->habitat }}</dd>
+    </dl>
+    <dl class="d-flex">
+      <dt class="w-25">クレジットカード</dt>
+      <dd class="w-75 text-prewrap">{{ $campsite->habitat }}</dd>
+    </dl>
+    */
 </div>
 @endsection

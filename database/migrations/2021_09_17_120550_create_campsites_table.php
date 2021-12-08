@@ -22,6 +22,7 @@ class CreateCampsitesTable extends Migration
             $table->string('address')->nullable();
             $table->text('access_textarea')->nullable();
             $table->text('parking')->nullable();
+            //$table->staring('vehicle')->nullable();
             //$table->staring('habitat')->nullable();
             //$table->staring('campsite_type)')->nyllable();
             //複数行に改行できるように設定
