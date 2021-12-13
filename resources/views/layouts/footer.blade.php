@@ -1,4 +1,4 @@
- <footer class="footer_bg p-5">
+ <footer class="footer_bg p-5  ">
   <div class="container">
     <nav class="footer-nav">
       <ul class="d-flex justify-content-between">

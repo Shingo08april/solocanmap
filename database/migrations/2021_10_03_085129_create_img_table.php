@@ -14,9 +14,9 @@ class CreateImgTable extends Migration
     public function up()
     {
         Schema::create('images', function (Blueprint $table) {
+            $table->bigIncrements('id');
             $table->string('image_path')->nullable(); 
             $table->bigInteger('campsite_id');
-            $table->bigIncrements('id');
             $table->timestamps();
         });
     }

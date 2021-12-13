@@ -41,7 +41,7 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <!-- Left Side Of Navbar -->
                         <ul class="navbar-nav mr-auto">
-                            <li class="text-white">たまにはひとりで楽しむキャンプはどうですか？</li>
+                            <li class="text-white">ソロキャンパーのためのキャンプ場検索サイト</li>
                         </ul>
 
                         <!-- Right Side Of Navbar -->

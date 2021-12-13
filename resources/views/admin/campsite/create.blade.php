@@ -102,8 +102,9 @@
                         <input type="text" class="form-control" name="price" value="{{ old('price') }}">
                       </div>
                     </div>
+                    <h2>営業情報</h2>
                     <div class="form-group row">
-                      <label class="col-md-2">営業時間</label>
+                      <label class="col-md-2">営業期間</label>
                       <div class="col-md-10">
                         <input type="text" class="form-control" name="businesshours" value="{{ old('businesshours') }}">
                       </div>
@@ -114,6 +115,10 @@
                         <input type="text" class="form-control" name="holiday" value="{{ old('holiday') }}">
                       </div>
                     </div>
+                    //チェックイン
+                    //チェックアウト
+                    //クレジットカード
+                    //利用タイプ
                     {{ csrf_field() }}
                     <input type="submit" class="btn btn-primary" value="更新">
                 </form>

@@ -7,7 +7,7 @@
 {{-- admin.blade.phpの@yield('content')に以下のタグを埋め込む --}}
 @section('content')
     <div class="container">
-      <h3>全国のおすすめのキャンプ場</h3>
+      <h4 class="font-weight-bold">全国のおすすめのキャンプ場</h4>
       <div class="posts mx-auto mt-3">
         <ul class="camp_list row list-unstyled mb-5">
          @foreach($posts as $post)

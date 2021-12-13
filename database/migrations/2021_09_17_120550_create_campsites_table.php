@@ -22,15 +22,20 @@ class CreateCampsitesTable extends Migration
             $table->string('address')->nullable();
             $table->text('access_textarea')->nullable();
             $table->text('parking')->nullable();
-            //$table->staring('vehicle')->nullable();
-            //$table->staring('habitat')->nullable();
-            //$table->staring('campsite_type)')->nyllable();
+            //$table->string('vehicle')->nullable();
+            //$table->string('habitat')->nullable();
+            //$table->string('campsite_type)')->nullable();
             //複数行に改行できるように設定
-            //$table->text('rental_item')->nyllable();
-            $table->string('tel')->nullable();
-            $table->string('price')->nullable();
-            $table->string('businesshours')->nullable();
+            //$table->text('rental_item')->nullable();
+            $table->string('tel')->nullable();//不要
+            $table->string('price')->nullable();//不要
+            $table->string('businesshours')->nullable();//不要
+            //$table->string('business_period')->nullable();
             $table->string('holiday')->nullable();
+            //$table->string('check_in')->nullable();
+            //$table->string('check_out')->nullable();
+            //$table->string('credit_card')->nullable();
+            //$table->string('camp_style')->nullable();
             $table->timestamps();
         });
     }

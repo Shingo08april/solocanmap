@@ -170,8 +170,9 @@
                           <input type="text" class="form-control" name="price" value="{{ $campsite_form->price }}">
                         </div>
                       </div>
+                      <h2>営業情報</h2>
                       <div class="form-group row">
-                        <label class="col-md-2">営業時間</label>
+                        <label class="col-md-2">営業期間</label>
                         <div class="col-md-10">
                           <input type="text" class="form-control" name="businesshours" value="{{ $campsite_form->businesshours }}">
                         </div>
@@ -182,6 +183,10 @@
                           <input type="text" class="form-control" name="holiday" value="{{ $campsite_form->holiday }}">
                         </div>
                       </div>
+                      <!--チェックイン-->
+                      <!--//チェックアウト-->
+                      <!--//クレジットカード-->
+                      <!--//利用タイプ---->
                       <div class="form-group row">
                           <div class="col-md-10">
                               <input type="hidden" name="id" value="{{ $campsite_form->id }}">
