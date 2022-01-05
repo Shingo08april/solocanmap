@@ -29,7 +29,7 @@
                     <div class="form-group row">
                         <label class="col-md-2" for="image">画像</label>
                         <div class="col-md-10">
-                            <input type="file" class="form-control-file" name="images[]">
+                            <input type="file" class="form-control-file" name="image1">
                             <div class="form-text text-info">
                                 @if(isset($campsite_form->images[0]))
                                 設定中: {{ $campsite_form->images[0]->image_path }}
@@ -40,7 +40,7 @@
                             @if(isset($campsite_form->images[0]))
                             <div class="form-check">
                                 <label class="form-check-label">
-                                    <input type="checkbox" class="form-check-input" name="removes[0]" value="true">画像を削除
+                                    <input type="checkbox" class="form-check-input" name="remove1" value="true">画像を削除
                                 </label>
                             </div>
                             @endif
@@ -49,7 +49,7 @@
                     <div class="form-group row">
                         <label class="col-md-2" for="image">画像</label>
                         <div class="col-md-10">
-                            <input type="file" class="form-control-file" name="images[]">
+                            <input type="file" class="form-control-file" name="image2">
                             <div class="form-text text-info">
                                 @if(isset($campsite_form->images[1]))
                                 設定中: {{ $campsite_form->images[1]->image_path }}
@@ -60,7 +60,7 @@
                              @if(isset($campsite_form->images[1]))
                             <div class="form-check">
                                 <label class="form-check-label">
-                                    <input type="checkbox" class="form-check-input" name="removes[1]" value="true">画像を削除
+                                    <input type="checkbox" class="form-check-input" name="remove2" value="true">画像を削除
                                 </label>
                             </div>
                             @endif
@@ -69,7 +69,7 @@
                     <div class="form-group row">
                         <label class="col-md-2" for="image">画像</label>
                         <div class="col-md-10">
-                            <input type="file" class="form-control-file" name="images[]">
+                            <input type="file" class="form-control-file" name="image3">
                             <div class="form-text text-info">
                                 @if(isset($campsite_form->images[2]))
                                 設定中: {{ $campsite_form->images[2]->image_path }}
@@ -80,7 +80,7 @@
                              @if(isset($campsite_form->images[2]))
                             <div class="form-check">
                                 <label class="form-check-label">
-                                    <input type="checkbox" class="form-check-input" name="removes[2]" value="true">画像を削除
+                                    <input type="checkbox" class="form-check-input" name="remove3" value="true">画像を削除
                                 </label>
                             </div>
                             @endif
@@ -89,7 +89,7 @@
                     <div class="form-group row">
                         <label class="col-md-2" for="image">画像</label>
                         <div class="col-md-10">
-                            <input type="file" class="form-control-file" name="images[]">
+                            <input type="file" class="form-control-file" name="image4">
                             <div class="form-text text-info">
                                 @if(isset($campsite_form->images[3]))
                                 設定中: {{ $campsite_form->images[3]->image_path }}
@@ -100,7 +100,7 @@
                              @if(isset($campsite_form->images[3]))
                             <div class="form-check">
                                 <label class="form-check-label">
-                                    <input type="checkbox" class="form-check-input" name="removes[3]" value="true">画像を削除
+                                    <input type="checkbox" class="form-check-input" name="remove4" value="true">画像を削除
                                 </label>
                             </div>
                             @endif
@@ -109,7 +109,7 @@
                     <div class="form-group row">
                         <label class="col-md-2" for="image">画像</label>
                         <div class="col-md-10">
-                            <input type="file" class="form-control-file" name="images[]">
+                            <input type="file" class="form-control-file" name="image5">
                             <div class="form-text text-info">
                                 @if(isset($campsite_form->images[4]))
                                 設定中: {{ $campsite_form->images[4]->image_path }}
@@ -120,7 +120,7 @@
                              @if(isset($campsite_form->images[4]))
                             <div class="form-check">
                                 <label class="form-check-label">
-                                    <input type="checkbox" class="form-check-input" name="removes[4]" value="true">画像を削除
+                                    <input type="checkbox" class="form-check-input" name="remove5" value="true">画像を削除
                                 </label>
                             </div>
                             @endif

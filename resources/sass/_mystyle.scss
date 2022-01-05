@@ -33,6 +33,33 @@ img{
     white-space: pre-wrap;
 }
 //show.bladeのlayout
+.content-heading{
+    font-size: 18px;
+}
+//キャンプ場一覧
+.camp_list{
+    justify-content: space-between;
+    flex-wrap:wrap;
+}
+
+.camp_list-single{
+    width: 24%;
+    margin-bottom: 30px;
+}
+
+.camp_list-single-heading{//キャンプ場名
+    font-size: 16px;
+    text-overflow: ellipsis;
+    //はみでたテキストを「...」と表示する
+    overflow: hidden;
+    //はみ出たテキストを非表示にする
+    white-space: nowrap;
+    //テキストを改行させない
+}
+
+.area-font{
+    font-size: 12px;
+}
 
 .footer_nav{
     background:#adb5bd;

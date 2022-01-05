@@ -64,37 +64,37 @@ class CampsiteController extends Controller
 
   public function update(Request $request)
   {
-    //dd($request);
+    // dd($request);
       $this->validate($request, Campsite::$rules);
       
       $campsite = Campsite::find($request->id);
       
       $campsite_form = $request->all();
+      
+      //現在、別テーブルで画像を管理しているが、画像の削除及び更新ができない状態なので、とりあえず動く状態にしたい。
+      //実際動いているコードを見て復習したい。この部分で何週間も手が止まっている状態。
+    
+      for($i=0; $i < count($campsite->images) ;$i++){
+        if(isset($campsite_form['removes'])){
+          // dd($campsite_form);
+          if(array_key_exists($i, $request->remove)){
+            $campsite->images[$i]->delete();
+          }
+        }elseif($request->file('images')[$i]){
+          if(array_key_exists($i, $request->file('images'))){
+            $path = $request->file('images')[$i]->store('public/image');
+            $image_path = basename($path);
+            $campsite->images[$i] = $image_path;
+            $campsite->images[$i]->save();
+          }
+        }
+      }
     
       
-      $image = Image::find('campsite_id'. $campsite->id);
-      if (isset($request->images)) {
-          foreach( $request->file("images") as $index => $image){
-          //   if ($request->remove == 'true') {
-          //       $campsite_form['image_path'] = null;
-          //   } elseif ($request->file('image')) {
-                if ($image) {
-                    $path = $image->store('public/image');
-                    $image_path = basename($path);
-                    $image = $campsite->images[$index];
-                    $image->image_path = $image_path;
-                    $image->campsite_id = $campsite->id;
-                    $image->save();
-                } else {
-                    $campsite_forms_form['image_path'] = $campsite->image_path;
-                }
-           }
-          //}
-      }
- 
-      unset($campsite_form['remove']);
+      unset($campsite_form['removes']);
       unset($campsite_form['_token']);
       unset($campsite_form['images']);
+      
 
       $campsite->fill($campsite_form)->save();
       return redirect('admin/campsite');

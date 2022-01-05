@@ -7,23 +7,23 @@
 {{-- admin.blade.phpの@yield('content')に以下のタグを埋め込む --}}
 @section('content')
     <div class="container">
-      <h4 class="font-weight-bold">全国のおすすめのキャンプ場</h4>
+      <h2 class="font-weight-bold content-heading">全国のおすすめのキャンプ場</h2>
       <div class="posts mx-auto mt-3">
-        <ul class="camp_list row list-unstyled mb-5">
+        <ul class="camp_list d-flex list-unstyled mb-5">
          @foreach($posts as $post)
-         <li class="camp_list-single col-md-3">
+         <li class="camp_list-single">
             <a href="{{route('show', ['id' => $post] )}}">
             <div class="border rounded-lg overflow-hidden">
               <div class="camp-img">
                   @if(isset($post->images[0]))
-                <img src="{{ secure_asset("storage/image/" . $post->images[0]->image_path) }}" class="img-thumbnail" >
+                <img src="{{ secure_asset("storage/image/" . $post->images[0]->image_path) }}" >
                   @else
                 <img src="{{ secure_asset("image/noimage.png") }}">
                   @endif
               </div>
               <div class="camp-text p-3">
-                <h3 class="h5 text-dark">{{ \Str::limit($post->campsite_name, 50) }}</h3>
-                <p class="text-center text-dark">{{ $post->area }}</p>
+                <h3 class="text-dark camp_list-single-heading font-weight-bold">{{ \Str::limit($post->campsite_name, 50) }}</h3>
+                <p class="text-center text-dark area-font">{{ $post->area }}</p>
               </div>
             </div>
             </a>

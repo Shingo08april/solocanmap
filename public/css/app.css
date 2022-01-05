@@ -11041,6 +11041,31 @@ img {
   white-space: pre-wrap;
 }
 
+.content-heading {
+  font-size: 18px;
+}
+
+.camp_list {
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.camp_list-single {
+  width: 24%;
+  margin-bottom: 30px;
+}
+
+.camp_list-single-heading {
+  font-size: 16px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.area-font {
+  font-size: 12px;
+}
+
 .footer_nav {
   background: #adb5bd;
 }
