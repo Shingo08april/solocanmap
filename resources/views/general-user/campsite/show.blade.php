@@ -6,37 +6,37 @@
   <div class="container">
     <div class="d-flex show_images-cont mb-4">
       <div class="w-50 overflow-hidden">
-        @if(isset($campsite->images[0]))
-         <img src="{{ secure_asset("storage/image/" . $campsite->images[0]->image_path) }}" >
+        @if(isset($campsite->image_path1))
+         <img src="{{ secure_asset("storage/image/" . $campsite->image_path1) }}" >
         @else
          <img src="{{ secure_asset("image/noimage.png") }}">
         @endif
       </div>
       <div class="w-50 d-flex flex-wrap">
         <div class="w-50 h-50 overflow-hidden">
-          @if(isset($campsite->images[1]))
-           <img src="{{ secure_asset("storage/image/" . $campsite->images[1]->image_path) }}" >
+          @if(isset($campsite->image_path2))
+           <img src="{{ secure_asset("storage/image/" . $campsite->image_path2) }}" >
           @else
            <img src="{{ secure_asset("image/noimage.png") }}">
           @endif
         </div>
         <div class="w-50 h-50 overflow-hidden">
-          @if(isset($campsite->images[2]))
-           <img src="{{ secure_asset("storage/image/" . $campsite->images[2]->image_path) }}" >
+          @if(isset($campsite->image_path3))
+           <img src="{{ secure_asset("storage/image/" . $campsite->image_path3) }}" >
           @else
            <img src="{{ secure_asset("image/noimage.png") }}">
           @endif
         </div>
         <div class="w-50 h-50 overflow-hidden">
-          @if(isset($campsite->images[3]))
-           <img src="{{ secure_asset("storage/image/" . $campsite->images[3]->image_path) }}" >
+          @if(isset($campsite->image_path4))
+           <img src="{{ secure_asset("storage/image/" . $campsite->image_path4) }}" >
           @else
            <img src="{{ secure_asset("image/noimage.png") }}">
           @endif
         </div>
         <div class="w-50 h-50 overflow-hidden">
-          @if(isset($campsite->images[4]))
-           <img src="{{ secure_asset("storage/image/" . $campsite->images[4]->image_path) }}" >
+          @if(isset($campsite->image_path5))
+           <img src="{{ secure_asset("storage/image/" . $campsite->image_path5) }}" >
           @else
            <img src="{{ secure_asset("image/noimage.png") }}">
           @endif

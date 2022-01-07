@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Campsite;
-use App\Image;
 
 class CampsiteController extends Controller
 {
@@ -18,22 +17,59 @@ class CampsiteController extends Controller
     public function create(Request $request)
     {
         // Validationを行う
-        
         $this->validate($request, Campsite::$rules);
-        $camp = new Campsite;
-        $camp->fill($request->except(["_token", "images"]));
-        $camp->save();
-
-        if (isset($request->images)) {
-          foreach( $request->file("images") as $image){
-             $path = $image->store('public/image');
-             $image_path = basename($path);
-             $image = new Image;
-             $image->image_path = $image_path;
-             $image->campsite_id = $camp->id;
-             $image->save();
-          }
+​
+        $campsite = new Campsite;
+        $form = $request->all();
+  ​
+        // フォームから画像が送信されてきたら、保存して、$news->image_path に画像のパスを保存する
+        if (isset($form['image1'])) {
+          $path = $request->file('image1')->store('public/image');
+          $campsite->image_path1 = basename($path);
+        } else {
+            $campsite->image_path1 = null;
         }
+        
+        if (isset($form['image2'])) {
+          $path = $request->file('image2')->store('public/image');
+          $campsite->image_path2 = basename($path);
+        } else {
+            $campsite->image_path2 = null;
+        }
+        
+        if (isset($form['image3'])) {
+          $path = $request->file('image3')->store('public/image');
+          $campsite->image_path3 = basename($path);
+        } else {
+            $campsite->image_path3 = null;
+        }
+        
+        if (isset($form['image4'])) {
+          $path = $request->file('image4')->store('public/image');
+          $campsite->image_path4 = basename($path);
+        } else {
+            $campsite->image_path4 = null;
+        }
+        
+        if (isset($form['image5'])) {
+          $path = $request->file('image5')->store('public/image');
+          $campsite->image_path5 = basename($path);
+        } else {
+            $campsite->image_path5 = null;
+        }
+  ​
+        // フォームから送信されてきた_tokenを削除する
+        unset($form['_token']);
+        // フォームから送信されてきたimageを削除する
+        unset($form['image1']);
+        unset($form['image2']);
+        unset($form['image3']);
+        unset($form['image4']);
+        unset($form['image5']);
+        
+        // データベースに保存する
+        $campsite->fill($form);
+        $campsite->save();
         
         
         return redirect('admin/campsite/create');

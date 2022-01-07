@@ -15,7 +15,4 @@ class Campsite extends Model
         'area' => 'required',
     );
     
-    public function images() {
-        return $this->hasMany('App\Image');
-    }
 }
