@@ -15,8 +15,8 @@
             <a href="{{route('show', ['id' => $post] )}}">
             <div class="border rounded-lg overflow-hidden">
               <div class="camp-img">
-                  @if(isset($post->images[0]))
-                <img src="{{ secure_asset("storage/image/" . $post->images[0]->image_path) }}" >
+                  @if(isset($post->image_path1))
+                <img src="{{ secure_asset("storage/image/" . $post->image_path1) }}" >
                   @else
                 <img src="{{ secure_asset("image/noimage.png") }}">
                   @endif

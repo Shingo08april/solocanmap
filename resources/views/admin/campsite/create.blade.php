@@ -89,25 +89,7 @@
                         <input type="text" class="form-control" name="parking" value="{{ old('parking') }}">
                       </div>
                     </div>
-                    <div class="form-group row">
-                      <label class="col-md-2">電話番号</label>
-                      <div class="col-md-10">
-                        <input type="text" class="form-control" name="tel" value="{{ old('tel') }}">
-                      </div>
-                    </div>
-                    <div class="form-group row">
-                      <label class="col-md-2">料金</label>
-                      <div class="col-md-10">
-                        <input type="text" class="form-control" name="price" value="{{ old('price') }}">
-                      </div>
-                    </div>
                     <h2>営業情報</h2>
-                    <div class="form-group row">
-                      <label class="col-md-2">営業期間</label>
-                      <div class="col-md-10">
-                        <input type="text" class="form-control" name="businesshours" value="{{ old('businesshours') }}">
-                      </div>
-                    </div>
                     <div class="form-group row">
                       <label class="col-md-2">定休日</label>
                       <div class="col-md-10">

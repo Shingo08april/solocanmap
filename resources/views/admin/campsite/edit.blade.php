@@ -31,13 +31,13 @@
                         <div class="col-md-10">
                             <input type="file" class="form-control-file" name="image1">
                             <div class="form-text text-info">
-                                @if(isset($campsite_form->images[0]))
-                                設定中: {{ $campsite_form->images[0]->image_path }}
+                                @if(isset($campsite_form->image_path1))
+                                設定中: {{ $campsite_form->image_path1 }}
                                 @else
                                 画像なし
                                 @endif
                             </div>
-                            @if(isset($campsite_form->images[0]))
+                            @if(isset($campsite_form->image_path1))
                             <div class="form-check">
                                 <label class="form-check-label">
                                     <input type="checkbox" class="form-check-input" name="remove1" value="true">画像を削除
@@ -51,13 +51,13 @@
                         <div class="col-md-10">
                             <input type="file" class="form-control-file" name="image2">
                             <div class="form-text text-info">
-                                @if(isset($campsite_form->images[1]))
-                                設定中: {{ $campsite_form->images[1]->image_path }}
+                                @if(isset($campsite_form->image_path2))
+                                設定中: {{ $campsite_form->image_path2 }}
                                 @else
                                 画像なし
                                 @endif
                             </div>
-                             @if(isset($campsite_form->images[1]))
+                             @if(isset($campsite_form->image_path2))
                             <div class="form-check">
                                 <label class="form-check-label">
                                     <input type="checkbox" class="form-check-input" name="remove2" value="true">画像を削除
@@ -71,13 +71,13 @@
                         <div class="col-md-10">
                             <input type="file" class="form-control-file" name="image3">
                             <div class="form-text text-info">
-                                @if(isset($campsite_form->images[2]))
-                                設定中: {{ $campsite_form->images[2]->image_path }}
+                                @if(isset($campsite_form->image_path3))
+                                設定中: {{ $campsite_form->image_path3 }}
                                 @else
                                 画像なし
                                 @endif
                             </div>
-                             @if(isset($campsite_form->images[2]))
+                             @if(isset($campsite_form->image_path3))
                             <div class="form-check">
                                 <label class="form-check-label">
                                     <input type="checkbox" class="form-check-input" name="remove3" value="true">画像を削除
@@ -91,13 +91,13 @@
                         <div class="col-md-10">
                             <input type="file" class="form-control-file" name="image4">
                             <div class="form-text text-info">
-                                @if(isset($campsite_form->images[3]))
-                                設定中: {{ $campsite_form->images[3]->image_path }}
+                                @if(isset($campsite_form->image_path4))
+                                設定中: {{ $campsite_form->image_path4 }}
                                 @else
                                 画像なし
                                 @endif
                             </div>
-                             @if(isset($campsite_form->images[3]))
+                             @if(isset($campsite_form->image_path4))
                             <div class="form-check">
                                 <label class="form-check-label">
                                     <input type="checkbox" class="form-check-input" name="remove4" value="true">画像を削除
@@ -111,13 +111,13 @@
                         <div class="col-md-10">
                             <input type="file" class="form-control-file" name="image5">
                             <div class="form-text text-info">
-                                @if(isset($campsite_form->images[4]))
-                                設定中: {{ $campsite_form->images[4]->image_path }}
+                                @if(isset($campsite_form->image_path5))
+                                設定中: {{ $campsite_form->image_path5 }}
                                 @else
                                 画像なし
                                 @endif
                             </div>
-                             @if(isset($campsite_form->images[4]))
+                             @if(isset($campsite_form->image_path5))
                             <div class="form-check">
                                 <label class="form-check-label">
                                     <input type="checkbox" class="form-check-input" name="remove5" value="true">画像を削除
@@ -162,19 +162,6 @@
                         <label class="col-md-2">電話番号</label>
                         <div class="col-md-10">
                           <input type="text" class="form-control" name="tel" value="{{ $campsite_form->tel }}">
-                        </div>
-                      </div>
-                      <div class="form-group row">
-                        <label class="col-md-2">料金</label>
-                        <div class="col-md-10">
-                          <input type="text" class="form-control" name="price" value="{{ $campsite_form->price }}">
-                        </div>
-                      </div>
-                      <h2>営業情報</h2>
-                      <div class="form-group row">
-                        <label class="col-md-2">営業期間</label>
-                        <div class="col-md-10">
-                          <input type="text" class="form-control" name="businesshours" value="{{ $campsite_form->businesshours }}">
                         </div>
                       </div>
                       <div class="form-group row">

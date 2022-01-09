@@ -18,10 +18,9 @@ class CampsiteController extends Controller
     {
         // Validationを行う
         $this->validate($request, Campsite::$rules);
-​
         $campsite = new Campsite;
+        
         $form = $request->all();
-  ​
         // フォームから画像が送信されてきたら、保存して、$news->image_path に画像のパスを保存する
         if (isset($form['image1'])) {
           $path = $request->file('image1')->store('public/image');
@@ -57,7 +56,7 @@ class CampsiteController extends Controller
         } else {
             $campsite->image_path5 = null;
         }
-  ​
+        
         // フォームから送信されてきた_tokenを削除する
         unset($form['_token']);
         // フォームから送信されてきたimageを削除する
@@ -70,6 +69,15 @@ class CampsiteController extends Controller
         // データベースに保存する
         $campsite->fill($form);
         $campsite->save();
+        if ($request->remove1 == 'true') {
+          $campsite_form['image_path1'] = null;
+      } elseif ($request->file('image1')) {
+          $path = $request->file('image1')->store('public/image');
+          $campsite_form['image_path1'] = basename($path);
+      } else {
+          $news_form['image_path1'] = $campsite->image_path;
+      }
+
         
         
         return redirect('admin/campsite/create');
@@ -110,21 +118,7 @@ class CampsiteController extends Controller
       //現在、別テーブルで画像を管理しているが、画像の削除及び更新ができない状態なので、とりあえず動く状態にしたい。
       //実際動いているコードを見て復習したい。この部分で何週間も手が止まっている状態。
     
-      for($i=0; $i < count($campsite->images) ;$i++){
-        if(isset($campsite_form['removes'])){
-          // dd($campsite_form);
-          if(array_key_exists($i, $request->remove)){
-            $campsite->images[$i]->delete();
-          }
-        }elseif($request->file('images')[$i]){
-          if(array_key_exists($i, $request->file('images'))){
-            $path = $request->file('images')[$i]->store('public/image');
-            $image_path = basename($path);
-            $campsite->images[$i] = $image_path;
-            $campsite->images[$i]->save();
-          }
-        }
-      }
+      
     
       
       unset($campsite_form['removes']);

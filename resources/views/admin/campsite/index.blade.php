@@ -42,8 +42,8 @@
                                 <tr>
                                     <th>{{ $campsite->id }}</th>
                                     <td>
-                                        @if(isset($campsite->images[0]))
-                                        <img src="{{ secure_asset("storage/image/" . $campsite->images[0]->image_path) }}" class="img-thumbnail" >
+                                        @if(isset($campsite->image_path1))
+                                        <img src="{{ secure_asset("storage/image/" . $campsite->image_path1) }}" class="img-thumbnail" >
                                         @else
                                         <img src="{{ secure_asset("image/noimage.png") }}">
                                         @endif
