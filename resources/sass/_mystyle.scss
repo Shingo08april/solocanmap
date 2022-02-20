@@ -32,6 +32,7 @@ img{
 .text-prewrap{
     white-space: pre-wrap;
 }
+
 //show.bladeのlayout
 .content-heading{
     font-size: 18px;
@@ -63,4 +64,36 @@ img{
 
 .footer_nav{
     background:#adb5bd;
+}
+
+.campcont_name{
+    font-size:24px;
+}
+
+.campcont_heading{
+    font-size:20px;
+}
+
+.campcont_campsite-info{
+    font-size:20px;
+}
+
+.campcont_business-info{
+    font-size:20px;
+}
+
+//aboutページ
+
+.aboutcont-image{
+    text-align: center;
+    img{
+        width: auto;
+        min-width: 50%;
+        height: 50%;
+    }
+}
+
+.solocanmap_logo{
+    width:25px;
+    height:25px;
 }

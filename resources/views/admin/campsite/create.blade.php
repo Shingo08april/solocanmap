@@ -89,6 +89,12 @@
                         <input type="text" class="form-control" name="parking" value="{{ old('parking') }}">
                       </div>
                     </div>
+                    <div class="form-group row">
+                      <label class="col-md-2">乗り入れ可能車両</label>
+                      <div class="col-md-10">
+                        <input type="text" class="form-control" name="vehicle" value="{{ old('vehicle') }}">
+                      </div>
+                    </div>
                     <h2>営業情報</h2>
                     <div class="form-group row">
                       <label class="col-md-2">定休日</label>
@@ -96,10 +102,28 @@
                         <input type="text" class="form-control" name="holiday" value="{{ old('holiday') }}">
                       </div>
                     </div>
-                    //チェックイン
-                    //チェックアウト
-                    //クレジットカード
-                    //利用タイプ
+                    <div class="form-group row">
+                      <label class="col-md-2">チェックイン</label>
+                      <div class="col-md-10">
+                        <input type="text" class="form-control" name="check_in" value="{{ old('check_in') }}">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label class="col-md-2">チェックアウト</label>
+                      <div class="col-md-10">
+                        <input type="text" class="form-control" name="check_out" value="{{ old('check_out') }}">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label class="wrapper" for="states">クレジットカード</label>
+                      <div class="button dropdown"> 
+                        <select name="credit_card">
+                           <option value="available">ご利用いただけます。</option>
+                           <option value="unavailable">ご利用いただけません。</option>
+                        </select>
+                      </div> 
+                    </div>
+                      //利用タイプ
                     {{ csrf_field() }}
                     <input type="submit" class="btn btn-primary" value="更新">
                 </form>

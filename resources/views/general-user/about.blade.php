@@ -3,7 +3,7 @@
 @section('title', 'Solocanmapについて')
 
 @section('content')
-    <div class="container">
-        <h3>hogehoge</h3>
+    <div class="container aboutcont-image">
+       <img src="image/solocanmap_about.png">
     </div>
 @endsection

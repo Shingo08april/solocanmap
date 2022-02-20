@@ -159,9 +159,9 @@
                         </div>
                       </div>
                       <div class="form-group row">
-                        <label class="col-md-2">電話番号</label>
+                        <label class="col-md-2">乗り換え可能車両</label>
                         <div class="col-md-10">
-                          <input type="text" class="form-control" name="tel" value="{{ $campsite_form->tel }}">
+                          <input type="text" class="form-control" name="vehicle" value="{{$campsite_form->vehicle }}">
                         </div>
                       </div>
                       <div class="form-group row">
@@ -170,7 +170,20 @@
                           <input type="text" class="form-control" name="holiday" value="{{ $campsite_form->holiday }}">
                         </div>
                       </div>
-                      <!--チェックイン-->
+                      <div class="form-group row">
+                      <label class="wrapper" for="states">クレジットカード</label>
+                      <div class="button dropdown"> 
+                        <select name="credit_card">
+                           @if($campsite_form->credit_card =='available' )
+                               <option value="available" selected>ご利用いただけます。</option>
+                               <option value="unavailable">ご利用いただけません。</option>
+                           @else
+                               <option value="available">ご利用いただけます。</option>
+                               <option value="unavailable" selected>ご利用いただけません。</option>
+                           @endif
+                        </select>
+                      </div> 
+                    </div>
                       <!--//チェックアウト-->
                       <!--//クレジットカード-->
                       <!--//利用タイプ---->

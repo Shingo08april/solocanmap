@@ -11070,3 +11070,34 @@ img {
   background: #adb5bd;
 }
 
+.campcont_name {
+  font-size: 24px;
+}
+
+.campcont_heading {
+  font-size: 20px;
+}
+
+.campcont_campsite-info {
+  font-size: 20px;
+}
+
+.campcont_business-info {
+  font-size: 20px;
+}
+
+.aboutcont-image {
+  text-align: center;
+}
+
+.aboutcont-image img {
+  width: auto;
+  min-width: 50%;
+  height: 50%;
+}
+
+.solocanmap_logo {
+  width: 25px;
+  height: 25px;
+}
+

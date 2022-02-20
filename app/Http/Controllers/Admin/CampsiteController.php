@@ -115,17 +115,64 @@ class CampsiteController extends Controller
       
       $campsite_form = $request->all();
       
-      //現在、別テーブルで画像を管理しているが、画像の削除及び更新ができない状態なので、とりあえず動く状態にしたい。
-      //実際動いているコードを見て復習したい。この部分で何週間も手が止まっている状態。
-    
+      if ($request->remove1 == 'true') {
+          $campsite_form['image_path1'] = null;
+      } elseif ($request->file('image1')) {
+          $path = $request->file('image1')->store('public/image');
+          $campsite_form['image_path1'] = basename($path);
+      } else {
+          $campsite_form['image_path1'] = $campsite->image_path1;
+      }
       
-    
+      if ($request->remove2 == 'true') {
+          $campsite_form['image_path2'] = null;
+      } elseif ($request->file('image2')) {
+          $path = $request->file('image2')->store('public/image');
+          $campsite_form['image_path2'] = basename($path);
+      } else {
+          $campsite_form['image_path2'] = $campsite->image_path2;
+      }
       
-      unset($campsite_form['removes']);
+      if ($request->remove3 == 'true') {
+          $campsite_form['image_path3'] = null;
+      } elseif ($request->file('image3')) {
+          $path = $request->file('image3')->store('public/image');
+          $campsite_form['image_path3'] = basename($path);
+      } else {
+          $campsite_form['image_path3'] = $campsite->image_path3;
+      }
+      
+      if ($request->remove4 == 'true') {
+          $campsite_form['image_path4'] = null;
+      } elseif ($request->file('image4')) {
+          $path = $request->file('image4')->store('public/image');
+          $campsite_form['image_path4'] = basename($path);
+      } else {
+          $campsite_form['image_path4'] = $campsite->image_path4;
+      }
+      
+      if ($request->remove5 == 'true') {
+          $campsite_form['image_path5'] = null;
+      } elseif ($request->file('image5')) {
+          $path = $request->file('image5')->store('public/image');
+          $campsite_form['image_path5'] = basename($path);
+      } else {
+          $campsite_form['image_path5'] = $campsite->image_path5;
+      }
+      // 該当するデータを上書きして保存する
+      
+      unset($campsite_form['image1']);
+      unset($campsite_form['image2']);
+      unset($campsite_form['image3']);
+      unset($campsite_form['image4']);
+      unset($campsite_form['image5']);
+      unset($campsite_form['remove1']);
+      unset($campsite_form['remove2']);
+      unset($campsite_form['remove3']);
+      unset($campsite_form['remove4']);
+      unset($campsite_form['remove5']);
       unset($campsite_form['_token']);
-      unset($campsite_form['images']);
       
-
       $campsite->fill($campsite_form)->save();
       return redirect('admin/campsite');
   }
