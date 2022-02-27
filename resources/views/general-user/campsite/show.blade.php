@@ -97,7 +97,11 @@
   </dl>
   <dl class="d-flex">
     <dt class="w-25">クレジットカード</dt>
-    <dd class="w-75 text-prewrap">{{ $campsite->credit_card }}</dd>
+    @if( $campsite->credit_card == 'available' )
+      <dd class="w-75 text-prewrap">ご利用いただけます。</dd>
+    @else
+      <dd class="w-75 text-prewrap">ご利用いただけません。</dd>
+    @endif
   </dl>
   <dl class="d-flex">
     <dt class="w-25">利用タイプ</dt>

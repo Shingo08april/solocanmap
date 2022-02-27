@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
-        <link rel="icon" href="/solocanmap-favicon.ico">
+        <link rel="icon" href="/favicon.ico">
 
         <!-- CSRF Token -->
          {{-- 後の章で説明します --}}
@@ -27,14 +27,20 @@
         <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
         {{-- この章の後半で作成するCSSを読み込みます --}}
         <link href="{{ asset('css/front.css') }}" rel="stylesheet">
+        
+        <link href="https://fonts.googleapis.com/css2?family=Saira:wght@500&display=swap" rel="stylesheet">
+        
+        <style>
+        
+        </style>
     </head>
     <body>
         <div id="app">
             {{-- 画面上部に表示するナビゲーションバーです。 --}}
             <nav class="navbar navbar-expand-md navbar-dark" style="background-color: #006400;">
                 <div class="container">
-                    <a class="navbar-brand" href="{{ url('/') }}">
-                       <img src="{{secure_asset("image/solocanmap_logo.png")}}" class="solocanmap_logo" >
+                    <a class="navbar-brand solocanmap_logo" href="{{ url('/') }}">
+                       <img src="{{secure_asset("image/solocanmap_logo.png")}}" >
                        solocanmap
                     </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
