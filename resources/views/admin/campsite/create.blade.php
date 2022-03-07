@@ -95,6 +95,24 @@
                         <input type="text" class="form-control" name="vehicle" value="{{ old('vehicle') }}">
                       </div>
                     </div>
+                    <div class="form-group row">
+                      <label class="col-md-2">立地環境</label>
+                      <div class="col-md-10">
+                        <input type="text" class="form-control" name="habitat" value="{{ old('habitat') }}">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label class="col-md-2">施設タイプ</label>
+                      <div class="col-md-10">
+                        <input type="text" class="form-control" name="campsite_type" value="{{ old('campsite_type') }}">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label class="col-md-2">レンタル可能用品</label>
+                      <div class="col-md-10">
+                        <textarea class="form-control" name="rental_item" rows="15">{{ old('rental_item') }}</textarea>
+                      </div>
+                    </div>
                     <h2>営業情報</h2>
                     <div class="form-group row">
                       <label class="col-md-2">定休日</label>
@@ -123,7 +141,6 @@
                         </select>
                       </div> 
                     </div>
-                      //利用タイプ
                     {{ csrf_field() }}
                     <input type="submit" class="btn btn-primary" value="更新">
                 </form>

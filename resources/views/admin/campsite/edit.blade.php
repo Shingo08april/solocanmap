@@ -165,6 +165,24 @@
                         </div>
                       </div>
                       <div class="form-group row">
+                        <label class="col-md-2">立地環境</label>
+                        <div class="col-md-10">
+                          <input type="text" class="form-control" name="habitat" value="{{$campsite_form->habitat }}">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label class="col-md-2">施設タイプ</label>
+                        <div class="col-md-10">
+                          <input type="text" class="form-control" name="campsite_type" value="{{$campsite_form->campsite_type }}">
+                        </div>
+                      </div>
+                       <div class="form-group row">
+                        <label class="col-md-2">レンタル可能用品</label>
+                        <div class="col-md-10">
+                          <textarea class="form-control" name="rental_item" rows="15">{{ $campsite_form->rental_item }}</textarea>
+                        </div>
+                      </div>
+                      <div class="form-group row">
                         <label class="col-md-2">定休日</label>
                         <div class="col-md-10">
                           <input type="text" class="form-control" name="holiday" value="{{ $campsite_form->holiday }}">

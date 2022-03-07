@@ -39,9 +39,9 @@
             {{-- 画面上部に表示するナビゲーションバーです。 --}}
             <nav class="navbar navbar-expand-md navbar-dark" style="background-color: #006400;">
                 <div class="container">
-                    <a class="navbar-brand solocanmap_logo" href="{{ url('/') }}">
-                       <img src="{{secure_asset("image/solocanmap_logo.png")}}" >
-                       solocanmap
+                    <a class="navbar-brand solocanmap_logo d-flex" href="{{ url('/') }}">
+                       <div><img src="{{secure_asset("image/solocanmap_logo.png")}}" ></div>
+                       <p>solocanmap</p>
                     </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
