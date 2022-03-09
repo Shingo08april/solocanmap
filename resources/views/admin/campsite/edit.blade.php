@@ -182,6 +182,13 @@
                           <textarea class="form-control" name="rental_item" rows="15">{{ $campsite_form->rental_item }}</textarea>
                         </div>
                       </div>
+                      <h2>営業情報</h2>
+                      <div class="form-group row">
+                        <label class="col-md-2">営業期間</label>
+                        <div class="col-md-10">
+                          <input type="text" class="form-control" name="business_period" value="{{ $campsite_form->business_period }}">
+                        </div>
+                      </div>
                       <div class="form-group row">
                         <label class="col-md-2">定休日</label>
                         <div class="col-md-10">
@@ -189,23 +196,38 @@
                         </div>
                       </div>
                       <div class="form-group row">
-                      <label class="wrapper" for="states">クレジットカード</label>
-                      <div class="button dropdown"> 
-                        <select name="credit_card">
-                           @if($campsite_form->credit_card =='available' )
-                               <option value="available" selected>ご利用いただけます。</option>
-                               <option value="unavailable">ご利用いただけません。</option>
-                           @else
-                               <option value="available">ご利用いただけます。</option>
-                               <option value="unavailable" selected>ご利用いただけません。</option>
-                           @endif
-                        </select>
-                      </div> 
-                    </div>
-                      <!--//チェックアウト-->
-                      <!--//クレジットカード-->
-                      <!--//利用タイプ---->
+                        <label class="col-md-2">チェックイン</label>
+                        <div class="col-md-10">
+                          <input type="text" class="form-control" name="check_in" value="{{$campsite_form->check_in }}">
+                        </div>
+                      </div>
                       <div class="form-group row">
+                        <label class="col-md-2">チェックアウト</label>
+                        <div class="col-md-10">
+                          <input type="text" class="form-control" name="check_out" value="{{$campsite_form->check_out }}">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                      <label class="wrapper" for="states">クレジットカード</label>
+                        <div class="button dropdown"> 
+                          <select name="credit_card">
+                             @if($campsite_form->credit_card =='available' )
+                                 <option value="available" selected>ご利用いただけます。</option>
+                                 <option value="unavailable">ご利用いただけません。</option>
+                             @else
+                                 <option value="available">ご利用いただけます。</option>
+                                 <option value="unavailable" selected>ご利用いただけません。</option>
+                             @endif
+                          </select>
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label class="col-md-2">利用タイプ</label>
+                        <div class="col-md-10">
+                          <input type="text" class="form-control" name="camp_style" value="{{ $campsite_form->camp_style }}">
+                        </div>
+                      </div>
+                    　<div class="form-group row">
                           <div class="col-md-10">
                               <input type="hidden" name="id" value="{{ $campsite_form->id }}">
                               {{ csrf_field() }}

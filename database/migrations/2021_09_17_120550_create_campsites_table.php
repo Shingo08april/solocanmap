@@ -24,7 +24,7 @@ class CreateCampsitesTable extends Migration
             $table->text('parking')->nullable();
             $table->string('vehicle')->nullable();
             $table->string('habitat')->nullable();
-            $table->string('campsite_type)')->nullable();
+            $table->string('campsite_type')->nullable();
             // 複数行に改行できるように設定
             $table->text('rental_item')->nullable();
             $table->string('business_period')->nullable();

@@ -115,6 +115,12 @@
                     </div>
                     <h2>営業情報</h2>
                     <div class="form-group row">
+                      <label class="col-md-2">営業期間</label>
+                      <div class="col-md-10">
+                        <input type="text" class="form-control" name="business_period" value="{{ old('business_period') }}">
+                      </div>
+                    </div>
+                    <div class="form-group row">
                       <label class="col-md-2">定休日</label>
                       <div class="col-md-10">
                         <input type="text" class="form-control" name="holiday" value="{{ old('holiday') }}">
@@ -139,7 +145,13 @@
                            <option value="available">ご利用いただけます。</option>
                            <option value="unavailable">ご利用いただけません。</option>
                         </select>
-                      </div> 
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label class="col-md-2">利用タイプ</label>
+                      <div class="col-md-10">
+                        <input type="text" class="form-control" name="camp_style" value="{{ old('camp_style') }}">
+                      </div>
                     </div>
                     {{ csrf_field() }}
                     <input type="submit" class="btn btn-primary" value="更新">
