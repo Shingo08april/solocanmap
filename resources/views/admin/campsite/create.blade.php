@@ -84,9 +84,9 @@
                       </div>
                     </div>
                     <div class="form-group row">
-                      <label class="col-md-2">駐車場</label>
+                      <label class="col-md-2 textare">駐車場</label>
                       <div class="col-md-10">
-                        <input type="text" class="form-control" name="parking" value="{{ old('parking') }}">
+                        <textarea class="form-control" name="parking" rows="10">{{ old('parking') }}</textarea>
                       </div>
                     </div>
                     <div class="form-group row">
@@ -102,9 +102,9 @@
                       </div>
                     </div>
                     <div class="form-group row">
-                      <label class="col-md-2">施設タイプ</label>
+                      <label class="col-md-2 textarea-s">施設タイプ</label>
                       <div class="col-md-10">
-                        <input type="text" class="form-control" name="campsite_type" value="{{ old('campsite_type') }}">
+                        <textarea class="form-control" name="campsite_type" rows="5">{{ old('campsite_type') }}</textarea>
                       </div>
                     </div>
                     <div class="form-group row">
@@ -139,8 +139,8 @@
                       </div>
                     </div>
                     <div class="form-group row">
-                      <label class="wrapper" for="states">クレジットカード</label>
-                      <div class="button dropdown"> 
+                      <label class="col-md-2 wrapper" for="states">クレジットカード</label>
+                      <div class="col-md-10 button dropdown"> 
                         <select name="credit_card">
                            <option value="available">ご利用いただけます。</option>
                            <option value="unavailable">ご利用いただけません。</option>

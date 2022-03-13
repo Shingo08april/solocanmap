@@ -11087,13 +11087,16 @@ img {
 }
 
 .aboutcont-image {
-  text-align: center;
+  width: 1015px;
+  margin: 0 auto 30px;
 }
 
-.aboutcont-image img {
-  width: auto;
-  min-width: 50%;
-  height: 50%;
+.featurecont {
+  margin-top: 10px;
+}
+
+.featurecont h3 {
+  font-size: 14px;
 }
 
 .solocanmap_logo {
@@ -11110,5 +11113,10 @@ img {
 .solocanmap_logo p {
   margin-bottom: 0;
   margin-top: 2px;
+}
+
+.textarea-s {
+  width: 100px;
+  height: 100px;
 }
 

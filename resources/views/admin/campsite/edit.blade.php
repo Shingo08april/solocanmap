@@ -155,7 +155,7 @@
                       <div class="form-group row">
                         <label class="col-md-2">駐車場</label>
                         <div class="col-md-10">
-                          <input type="text" class="form-control" name="parking" value="{{$campsite_form->parking }}">
+                           <textarea class="form-control" name="parking" rows="10">{{ $campsite_form->parking }}</textarea>
                         </div>
                       </div>
                       <div class="form-group row">
@@ -173,7 +173,7 @@
                       <div class="form-group row">
                         <label class="col-md-2">施設タイプ</label>
                         <div class="col-md-10">
-                          <input type="text" class="form-control" name="campsite_type" value="{{$campsite_form->campsite_type }}">
+                          <textarea class="form-control" name="camp_style" rows="5">{{ $campsite_form->camp_style }}</textarea>
                         </div>
                       </div>
                        <div class="form-group row">
@@ -208,8 +208,8 @@
                         </div>
                       </div>
                       <div class="form-group row">
-                      <label class="wrapper" for="states">クレジットカード</label>
-                        <div class="button dropdown"> 
+                      <label class="col-md-2 wrapper" for="states">クレジットカード</label>
+                        <div class="col-md-10 button dropdown"> 
                           <select name="credit_card">
                              @if($campsite_form->credit_card =='available' )
                                  <option value="available" selected>ご利用いただけます。</option>
