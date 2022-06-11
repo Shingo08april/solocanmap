@@ -60,7 +60,7 @@
                         {{-- ログインしていなかったらログイン画面へのリンクを表示 --}}
                         @guest
                             <li><a class="nav-link text-white" href="{{ route('login') }}">ログイン</a></li>
-                            <!--<li><a class="nav-link text-white" href="{{ route('register') }}">新規会員登録</a></li>-->
+                            <li><a class="nav-link text-white" href="{{ route('register') }}">新規会員登録</a></li>
                         {{-- ログインしていたらユーザー名とログアウトボタンを表示 --}}
                         @else
                             <li><a class="nav-link text-white" href="{{ url('/admin/campsite')}}">登録済みキャンプ場一覧</a></li>

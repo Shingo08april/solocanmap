@@ -15,4 +15,6 @@ class Campsite extends Model
         'area' => 'required',
     );
     
+    
+    
 }

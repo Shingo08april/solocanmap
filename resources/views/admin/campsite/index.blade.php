@@ -43,7 +43,7 @@
                                     <th>{{ $campsite->id }}</th>
                                     <td>
                                         @if(isset($campsite->image_path1))
-                                        <img src="{{ secure_asset("storage/image/" . $campsite->image_path1) }}" class="img-thumbnail" >
+                                         <img src="{{ $campsite->image_path1}}" class="img-thumbnail">
                                         @else
                                         <img src="{{ secure_asset("image/noimage.png") }}">
                                         @endif
@@ -51,12 +51,14 @@
                                     <td>{{ \Str::limit($campsite->campsite_name, 50) }}</td>
                                     <td>{{ $campsite->area }}</td>
                                     <td>
+                                        
                                         <div>
                                             <a href="{{action('Admin\CampsiteController@edit', ['id' => $campsite->id]) }}">編集</a>
                                         </div>
                                         <div>
                                             <a href="{{action('Admin\CampsiteController@delete', ['id' => $campsite->id]) }}">削除</a>
                                         </div>
+                                        
                                     </td>
                                 </tr>
                             @endforeach

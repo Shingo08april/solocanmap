@@ -18,7 +18,7 @@
             <a href="{{route('show', ['id' => $posts[$i]->id] )}}">
             <div class="border rounded-lg overflow-hidden">
               <div class="camp-img">
-                <img src="{{ secure_asset("storage/image/" . $posts[$i]->image_path1) }}" class="img-thumbnail" >
+                <img src="{{ $posts[$i]->image_path1 }}" class="img-thumbnail" >
               </div>
               <div class="camp-text p-3">
                 <h3 class="h5 text-dark">{{ \Str::limit($posts[$i]->campsite_name, 50) }}</h3>
@@ -39,7 +39,7 @@
             <a href="{{route('show', ['id' => $posts[$i]->id] )}}">
             <div class="border rounded-lg overflow-hidden">
               <div class="camp-img">
-                <img src="{{ secure_asset("storage/image/" . $posts[$i]->image_path1) }}" class="img-thumbnail" >
+                 <img src="{{ $posts[$i]->image_path1 }}" class="img-thumbnail" >
               </div>
               <div class="camp-text p-3">
                 <h3 class="h5 text-dark">{{ \Str::limit($posts[$i]->campsite_name, 50) }}</h3>

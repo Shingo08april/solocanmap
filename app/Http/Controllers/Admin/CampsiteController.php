@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Campsite;
+use Storage;
 
 class CampsiteController extends Controller
 {
@@ -20,54 +21,55 @@ class CampsiteController extends Controller
         $this->validate($request, Campsite::$rules);
         $campsite = new Campsite;
         
-        $form = $request->all();
+        $campsite_form = $request->all();
         // フォームから画像が送信されてきたら、保存して、$news->image_path に画像のパスを保存する
-        if (isset($form['image1'])) {
-          $path = $request->file('image1')->store('public/image');
-          $campsite->image_path1 = basename($path);
+        if (isset($campsite_form['image1'])) {
+          $path = Storage::disk('s3')->putFile('/',$campsite_form['image1'],'public');
+          $campsite->image_path1 = Storage::disk('s3')->url($path);
         } else {
             $campsite->image_path1 = null;
         }
         
-        if (isset($form['image2'])) {
-          $path = $request->file('image2')->store('public/image');
-          $campsite->image_path2 = basename($path);
+        if (isset($campsite_form['image2'])) {
+          $path = Storage::disk('s3')->putFile('/',$campsite_form['image2'],'public');
+          $campsite->image_path2 = Storage::disk('s3')->url($path);
         } else {
             $campsite->image_path2 = null;
         }
         
-        if (isset($form['image3'])) {
-          $path = $request->file('image3')->store('public/image');
-          $campsite->image_path3 = basename($path);
+         if (isset($campsite_form['image3'])) {
+          $path = Storage::disk('s3')->putFile('/',$campsite_form['image3'],'public');
+          $campsite->image_path3 = Storage::disk('s3')->url($path);
         } else {
             $campsite->image_path3 = null;
         }
         
-        if (isset($form['image4'])) {
-          $path = $request->file('image4')->store('public/image');
-          $campsite->image_path4 = basename($path);
+         if (isset($campsite_form['image4'])) {
+          $path = Storage::disk('s3')->putFile('/',$campsite_form['image4'],'public');
+          $campsite->image_path4 = Storage::disk('s3')->url($path);
         } else {
             $campsite->image_path4 = null;
         }
         
-        if (isset($form['image5'])) {
-          $path = $request->file('image5')->store('public/image');
-          $campsite->image_path5 = basename($path);
+        if (isset($campsite_form['image5'])) {
+          $path = Storage::disk('s3')->putFile('/',$campsite_form['image5'],'public');
+          $campsite->image_path5 = Storage::disk('s3')->url($path);
         } else {
             $campsite->image_path5 = null;
         }
         
         // フォームから送信されてきた_tokenを削除する
-        unset($form['_token']);
+        unset($campsite_form['_token']);
         // フォームから送信されてきたimageを削除する
-        unset($form['image1']);
-        unset($form['image2']);
-        unset($form['image3']);
-        unset($form['image4']);
-        unset($form['image5']);
+        unset($campsite_form['image1']);
+        unset($campsite_form['image2']);
+        unset($campsite_form['image3']);
+        unset($campsite_form['image4']);
+        unset($campsite_form['image5']);
         
         // データベースに保存する
-        $campsite->fill($form);
+        $campsite->fill($campsite_form);
+        //$campsite->user_id=Auth::id()
         $campsite->save();
         if ($request->remove1 == 'true') {
           $campsite_form['image_path1'] = null;
@@ -118,8 +120,8 @@ class CampsiteController extends Controller
       if ($request->remove1 == 'true') {
           $campsite_form['image_path1'] = null;
       } elseif ($request->file('image1')) {
-          $path = $request->file('image1')->store('public/image');
-          $campsite_form['image_path1'] = basename($path);
+          $path = Storage::disk('s3')->putFile('/',$campsite_form['image1'],'public');
+          $campsite_form['image_path1'] = Storage::disk('s3')->url($path);
       } else {
           $campsite_form['image_path1'] = $campsite->image_path1;
       }
@@ -127,37 +129,37 @@ class CampsiteController extends Controller
       if ($request->remove2 == 'true') {
           $campsite_form['image_path2'] = null;
       } elseif ($request->file('image2')) {
-          $path = $request->file('image2')->store('public/image');
-          $campsite_form['image_path2'] = basename($path);
+          $path = Storage::disk('s3')->putFile('/',$campsite_form['image2'],'public');
+          $campsite_form['image_path2'] = Storage::disk('s3')->url($path);
       } else {
-          $campsite_form['image_path2'] = $campsite->image_path2;
+          $campsite_form['image_path2'] = $campsite->image_path1;
       }
       
-      if ($request->remove3 == 'true') {
+      if ($request->remove1 == 'true') {
           $campsite_form['image_path3'] = null;
       } elseif ($request->file('image3')) {
-          $path = $request->file('image3')->store('public/image');
-          $campsite_form['image_path3'] = basename($path);
+          $path = Storage::disk('s3')->putFile('/',$campsite_form['image3'],'public');
+          $campsite_form['image_path3'] = Storage::disk('s3')->url($path);
       } else {
-          $campsite_form['image_path3'] = $campsite->image_path3;
+          $campsite_form['image_path3'] = $campsite->image_path1;
       }
       
       if ($request->remove4 == 'true') {
           $campsite_form['image_path4'] = null;
       } elseif ($request->file('image4')) {
-          $path = $request->file('image4')->store('public/image');
-          $campsite_form['image_path4'] = basename($path);
+          $path = Storage::disk('s3')->putFile('/',$campsite_form['image4'],'public');
+          $campsite_form['image_path4'] = Storage::disk('s3')->url($path);
       } else {
-          $campsite_form['image_path4'] = $campsite->image_path4;
+          $campsite_form['image_path4'] = $campsite->image_path1;
       }
       
       if ($request->remove5 == 'true') {
-          $campsite_form['image_path5'] = null;
+          $campsite_form['image_path1'] = null;
       } elseif ($request->file('image5')) {
-          $path = $request->file('image5')->store('public/image');
-          $campsite_form['image_path5'] = basename($path);
+          $path = Storage::disk('s3')->putFile('/',$campsite_form['image5'],'public');
+          $campsite_form['image_path5'] = Storage::disk('s3')->url($path);
       } else {
-          $campsite_form['image_path5'] = $campsite->image_path5;
+          $campsite_form['image_path5'] = $campsite->image_path1;
       }
       // 該当するデータを上書きして保存する
       
