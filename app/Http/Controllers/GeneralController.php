@@ -15,8 +15,7 @@ class GeneralController extends Controller
     
     public function index()
     {
-        $posts = Campsite::all();
-        //dd($posts);
+        $posts = Campsite::all()->sortByDesc('id');
         return view('toppage', ['posts' => $posts]);
     }
     
